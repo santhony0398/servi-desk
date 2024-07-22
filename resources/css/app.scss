@@ -1,0 +1,93 @@
+@use 'media-queries' as *;
+
+@import '../../vendor/filament/forms/dist/module.esm.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-menu {
+    @apply transition-all relative z-40;
+    min-width: 250px;
+    width: 250px;
+    margin-left: 0;
+    transition-duration: 500ms;
+
+    @include lt-sm {
+        @apply fixed;
+    }
+
+    &.closed {
+        margin-left: -250px;
+    }
+
+    ul {
+        min-height: 350px;
+    }
+}
+
+#tickets,
+#ticket-details-tabs {
+    .menu {
+        .item {
+            @apply font-normal text-gray-500 pb-2 px-2 border-primary-700;
+            min-width: 150px;
+
+            &:hover {
+                @apply border-b;
+            }
+
+            &.active {
+                @apply border-b-2 font-bold;
+            }
+        }
+    }
+}
+
+table {
+    .min-w-table {
+        min-width: 200px;
+    }
+}
+
+.magnificpopup-container {
+    img {
+        &:hover {
+            @apply cursor-pointer;
+        }
+    }
+}
+
+.mfp-title {
+    @apply w-full;
+
+    text-align: center !important;
+}
+
+.updating-section {
+    button {
+        @apply hidden;
+    }
+
+    &:hover {
+        button {
+            @apply flex;
+        }
+    }
+}
+
+#chat {
+    height: 500px;
+
+    #chat-container {
+        img {
+            max-width: 50%;
+        }
+    }
+}
+
+.modal-container {
+    @apply w-full overflow-y-auto max-h-screen p-5;
+
+    max-height: calc(100vh - 200px);
+}
